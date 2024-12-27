@@ -25,9 +25,9 @@ Estas soluciones facilitarán:
 * La adopción de estándares internacionales de codificación como SNOMED, WHODrug e ICD-11.  
 * La interoperabilidad entre los sistemas nacionales y las bases de datos regionales y globales.
 
-### Del modelo lógico a la implementación
+<!-- ### Del modelo lógico a la implementación
 
-El modelo lógico está basado en las recomendaciones del Manual Regional de Vigilancia de ESAVI para el reporte individual de casos, donde cada estado miembro informa hacia el Sistema Regional de Vacunación Segura de la OPS. Como paso previo se estructuró un Diccionario de Datos para Notificación de ESAVI ES en formato tabular. Este modelo lógico se encuentra mapeado a un recurso [Questionnaire] (https://build.fhir.org/ig/PanAmericanHealthOrganization/OPS-ESAVI/StructureDefinition-ESAVIQuestionnaireResponse.html) <!-- CAMBIAR EL LINK CUANDO SE TENGA EL RECURSO!!!!!!! -->
+El modelo lógico está basado en las recomendaciones del Manual Regional de Vigilancia de ESAVI para el reporte individual de casos, donde cada estado miembro informa hacia el Sistema Regional de Vacunación Segura de la OPS. Como paso previo se estructuró un Diccionario de Datos para Notificación de ESAVI ES en formato tabular. Este modelo lógico se encuentra mapeado a un recurso [Questionnaire] (https://build.fhir.org/ig/PanAmericanHealthOrganization/OPS-ESAVI/StructureDefinition-ESAVIQuestionnaireResponse.html) CAMBIAR EL LINK CUANDO SE TENGA EL RECURSO!!!!!!! -->
 
 ### Requerimientos de Conformidad
 
