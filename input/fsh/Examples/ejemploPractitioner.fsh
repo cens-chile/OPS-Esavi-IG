@@ -10,7 +10,7 @@ Usage: #example
 
 * extension[TipoNotificador].url = "https://paho.org/fhir/ops-esavi/StructureDefinition/opsesavi-tiponotificador"  
 * extension[TipoNotificador].valueCodeableConcept.coding.system = "https://paho.org/fhir/esavi/CodeSystem/ProfesionalNotificadorCS"
-* extension[TipoNotificador].valueCodeableConcept.coding.code = #2
+* extension[TipoNotificador].valueCodeableConcept.coding.code = #1
 
 * identifier.system = "http://www.validadorindetificaciones.com/ID/identificador"
 * identifier.value = "16231314"
