@@ -25,7 +25,7 @@ Description: "Evento de vacunación parte del caso esavi"
     * code 0..1 
   * text 0..1 
 * vaccineCode.text ^short = "Nombre de la vacuna como texto libre" 
-* vaccineCode from https://paho.org/fhir/esavi/ValueSet/CodigoWhoVacunaVS 
+* vaccineCode from CodigoWhoVacunaVS (preferred)
 
 * expirationDate 0..1 MS
 

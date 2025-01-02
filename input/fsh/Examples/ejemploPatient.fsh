@@ -11,7 +11,7 @@ Usage: #example
 * address.line = "Las hortencias 25405"
 
 * extension[NivelGeoSubnacional].url = "https://paho.org/fhir/ops-esavi/StructureDefinition/opsesavi-nvlgeosub"  
-* extension[NivelGeoSubnacional].valueCodeableConcept.coding.system = "https://paho.org/fhir/esavi/CodeSystem/DirOrgNotiCS"
+* extension[NivelGeoSubnacional].valueCodeableConcept.coding.system = "'https://paho.org/fhir/ops-esavi/CodeSystem/DirOrgNotiCS"
 * extension[NivelGeoSubnacional].valueCodeableConcept.coding.code = #CL_RM_13110
 
 * identifier.system = "http://www.validadorindetificaciones.com/ID/identificador"

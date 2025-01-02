@@ -12,7 +12,7 @@ Description: "Extension usada para describir al tipo de profresional notificador
     * system 1..1 MS 
     * code 1..1 MS 
 * valueCodeableConcept.text 0..1 MS 
-* valueCodeableConcept from https://paho.org/fhir/esavi/ValueSet/ProfesionalNotificadorVS
+* valueCodeableConcept from ProfesionalNotificadorVS (preferred)
 
 Extension: NivelGeoSubnacional
 Id: opsesavi-nvlgeosub
@@ -28,4 +28,4 @@ Description: "Extension usada para señalar el nivel geografico subnacional"
     * system 1..1  
     * code 1..1 
 * valueCodeableConcept.text 0..1 MS 
-* valueCodeableConcept from https://paho.org/fhir/esavi/ValueSet/DirOrgNotiVS
+* valueCodeableConcept from DirOrgNotiVS (preferred)

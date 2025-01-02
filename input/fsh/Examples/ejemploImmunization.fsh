@@ -16,7 +16,7 @@ Description: "Instancia de un evento de vacunación para un caso ESAVI"
 * site.text = "Brazo izquierdo"
 
 * vaccineCode.coding.code = #00000202032
-* vaccineCode.coding.system = "https://paho.org/fhir/esavi/CodeSystem/WHODrugDCCS"
+* vaccineCode.coding.system = "https://paho.org/fhir/ops-esavi/CodeSystem/WHODrugDCCS"
 * vaccineCode.text = "Vacuna contra COVID-19"
 
 * expirationDate = "2024-12-31"
