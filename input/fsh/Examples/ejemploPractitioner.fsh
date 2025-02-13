@@ -9,7 +9,7 @@ Usage: #example
   * family = "Quezada"
 
 * extension[TipoNotificador].url = "https://paho.org/fhir/ops-esavi/StructureDefinition/opsesavi-tiponotificador"  
-* extension[TipoNotificador].valueCodeableConcept.coding.system = "'https://paho.org/fhir/ops-esavi/CodeSystem/ProfesionalNotificadorCS"
+* extension[TipoNotificador].valueCodeableConcept.coding.system = "https://paho.org/fhir/ops-esavi/CodeSystem/ProfesionalNotificadorCS"
 * extension[TipoNotificador].valueCodeableConcept.coding.code = #1
 
 * identifier.system = "http://www.validadorindetificaciones.com/ID/identificador"
