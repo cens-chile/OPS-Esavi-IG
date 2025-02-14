@@ -16,7 +16,6 @@ Usage: #example
 
 * extension[EdadEstimadaAnos].url = "https://paho.org/fhir/ops-esavi/StructureDefinition/opsesavi-edadestimada-anos"
 * extension[EdadEstimadaAnos].valueQuantity.system = "http://unitsofmeasure.org"
-* extension[EdadEstimadaAnos].valueQuantity.unit = "24 años"
 * extension[EdadEstimadaAnos].valueQuantity.code = #a
 * extension[EdadEstimadaAnos].valueQuantity.value = 24
 

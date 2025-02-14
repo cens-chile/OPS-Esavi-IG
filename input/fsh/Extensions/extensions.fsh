@@ -65,8 +65,8 @@ Description: "Extension usada para señalar el grupo étnico del paciente"
 
 Extension: EdadEstimadaAnos
 Id: opsesavi-edadestimada-anos
-Title: "Edad estimada"
-Description: "Extension para representar la edad estimada del paciente"
+Title: "Edad estimada (años)"
+Description: "Extension para representar la edad estimada del paciente, en este caso los años"
 * ^status = #active
 * ^context.type = #element 
 * ^context.expression = #Patient
@@ -79,8 +79,8 @@ Description: "Extension para representar la edad estimada del paciente"
 
 Extension: EdadEstimadaMeses
 Id: opsesavi-edadestimada-meses
-Title: "Edad estimada"
-Description: "Extension para representar la edad estimada del paciente"
+Title: "Edad estimada (meses)"
+Description: "Extension para representar la edad estimada del paciente, en este caso los meses"
 * ^status = #active
 * ^context.type = #element 
 * ^context.expression = #Patient
@@ -93,8 +93,8 @@ Description: "Extension para representar la edad estimada del paciente"
 
 Extension: EdadEstimadaDias
 Id: opsesavi-edadestimada-dias
-Title: "Edad estimada"
-Description: "Extension para representar la edad estimada del paciente"
+Title: "Edad estimada (dias)"
+Description: "Extension para representar la edad estimada del paciente, en este caso los dias"
 * ^status = #active
 * ^context.type = #element 
 * ^context.expression = #Patient
