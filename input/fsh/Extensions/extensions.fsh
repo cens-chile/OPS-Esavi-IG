@@ -30,14 +30,12 @@ Description: "Extension usada para señalar el nivel geografico subnacional"
 * valueCodeableConcept.text 0..1 MS 
 * valueCodeableConcept from DirOrgNotiVS (preferred)
 
-Extension: Nacionalidad
-Id: opsesavi-nacionalidad
-Title: "Nacionalidad"
-Description: "Extension usada para señalar la nacionalidad del paciente"
-* ^context.type = #element 
-* ^context.expression = #Patient
+Extension: Pais
+Id: opsesavi-pais
+Title: "Pais"
+Description: "Extension usada para señalar la nacionalidad del paciente, o cualquier dato relevante que necesite un país"
 * value[x] only CodeableConcept
-* value[x] ^short = "Nacionalidad"
+* value[x] ^short = "País"
 * url 1..1 MS 
 * valueCodeableConcept 0..1 MS 
   * coding 0..1 MS

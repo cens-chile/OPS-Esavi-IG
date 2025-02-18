@@ -29,9 +29,9 @@ Usage: #example
 * extension[EdadEstimadaDias].valueQuantity.code = #d
 * extension[EdadEstimadaDias].valueQuantity.value = 13
 
-* extension[Nacionalidad].url = "https://paho.org/fhir/ops-esavi/StructureDefinition/opsesavi-nacionalidad"
-* extension[Nacionalidad].valueCodeableConcept.coding.system = "https://paho.org/fhir/ops-esavi/CodeSystem/CodPaisesCS"
-* extension[Nacionalidad].valueCodeableConcept.coding.code = #CHL
+* extension[Pais].url = "https://paho.org/fhir/ops-esavi/StructureDefinition/opsesavi-pais"
+* extension[Pais].valueCodeableConcept.coding.system = "https://paho.org/fhir/ops-esavi/CodeSystem/CodPaisesCS"
+* extension[Pais].valueCodeableConcept.coding.code = #CHL
 
 * extension[Etnia].url = "https://paho.org/fhir/ops-esavi/StructureDefinition/opsesavi-etnia"
 * extension[Etnia].valueCodeableConcept.coding.system = "https://paho.org/fhir/ops-esavi/CodeSystem/GrupoEtnicoCS"

@@ -6,7 +6,7 @@ Description: "Paciente parte de la notificación de casos esavi"
 * extension contains NivelGeoSubnacional named nivelGeograficoSubnacional 1..1 MS
 * extension[nivelGeograficoSubnacional] ^short = "Corresponde a Estado, Provincia o Departamento de residencia de la persona afectada por el evento"
 
-* extension contains Nacionalidad named nacionalidad 0..* MS
+* extension contains Pais named nacionalidad 0..* MS
 * extension[nacionalidad] ^short = "Nacionalidad"
 
 * extension contains Etnia named etnia 0..1 MS
