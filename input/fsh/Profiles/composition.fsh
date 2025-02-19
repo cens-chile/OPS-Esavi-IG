@@ -6,6 +6,9 @@ Description: "Composotion para el Esavi, contiene datos útiles para la notifica
 * extension contains Pais named paisOrigen 1..1 MS
 * extension[paisOrigen] ^short = "País de origen del reporte"
 
+* subject 1..1 MS 
+* subject only Reference(PatientOPSEsavi)
+
 * status 1..1 
 * status ^short = "Estado del Composition."
 * status = #final
