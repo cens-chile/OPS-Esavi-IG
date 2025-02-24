@@ -25,3 +25,6 @@ Usage: #example
 
 * entry[practitionerRole].fullUrl = "http://acme.com/fhir/PractitionerRole/EjemploPRole"
 * entry[practitionerRole].resource = EjemploPRole
+
+* entry[encounter].fullUrl = "http://acme.com/fhir/Encounter/EjemploEncounter"
+* entry[encounter].resource = EjemploEncounter

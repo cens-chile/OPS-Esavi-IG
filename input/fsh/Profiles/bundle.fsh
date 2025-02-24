@@ -20,8 +20,10 @@ Description: "Bundle para el documento de notificación de casos esavi"
         and practitioner 1..1 
         and organization 1..1
         and practitionerRole 1..1 
+        and encounter 1..1
 * entry[composition].resource only CompositionOPSEsavi
 * entry[patient].resource only PatientOPSEsavi
 * entry[practitioner].resource only PractitionerNotificadorOPSEsavi
 * entry[organization].resource only OrganizationNotificadoraOPSEsavi
 * entry[practitionerRole].resource only PractitionerRoleCargoOPSEsavi
+* entry[encounter].resource only EncounterOPSEsavi

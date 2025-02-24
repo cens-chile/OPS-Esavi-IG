@@ -8,7 +8,12 @@ Description: "Composición de ejemplo para notificación de caso ESAVI"
 * extension[Pais].valueCodeableConcept.coding.system = "https://paho.org/fhir/ops-esavi/CodeSystem/CodPaisesCS"
 * extension[Pais].valueCodeableConcept.coding.code = #CHL
 
+* identifier.system = "http://acme.com/fhir/Composition/EjemploComposition"
+* identifier.value = "Composition1289741"
+
 * subject = Reference(EjemploPatient)
+
+* encounter = Reference(EjemploEncounter)
 
 * status = #final 
 
