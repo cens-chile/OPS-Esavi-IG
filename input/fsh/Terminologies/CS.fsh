@@ -71,3 +71,50 @@ Description: "Cargos dentro de una organizacion"
 * #4 "Técnico"
 * #5 "Abogado"
 * #0 "Otro"
+
+CodeSystem: FormaVerificacionCS
+Id: FormaVerificacionCS
+Title: "Forma de Verificación"
+Description: "Formas de verificación posibles, a modo de ejemplo"
+* ^status = #active
+* ^content = #complete
+* #1 "Carnet o registro físico"
+* #2 "Carnet o registro digital"
+* #3 "Declaración verbal"
+* #4 "Historia clínica corroborada con carnet"
+* #5 "No se sabe"
+* #0 "Otro"
+
+CodeSystem: NombreESAVICS
+Id: NombreESAVICS
+Title: "Nombre de ESAVI"
+Description: "Códigos de eventos supuestamente atribuibles a la vacunación o inmunización (ESAVI)"
+* ^status = #active
+* ^content = #complete
+* #1 "Fiebre >= 38°C"
+* #2 "Dolor en el sitio de la inyección"
+* #3 "Eritema en el sitio de la inyección"
+* #4 "Inflamación en el sitio de la inyección"
+* #5 "Cefalea"
+* #6 "Convulsiones febriles"
+* #7 "Absceso"
+* #8 "Linfadenitis"
+* #9 "Encefalopatía"
+* #10 "Encefalitis"
+* #11 "Trombocitopenia"
+* #12 "Anafilaxia"
+* #13 "Síndrome de shock tóxico"
+* #14 "Sepsis"
+* #0 "Otro"
+
+CodeSystem: ClasificacionDesenlaceCS 
+Id: ClasificacionDesenlaceCS
+Title: "Desenlaces Tras ESAVI"
+Description:  "Clasificación de Desenlace Tras Sufrir ESAVI"
+* ^status = #active
+* ^content = #complete
+* #1 "Recuperado Completamente"
+* #2 "En recuperación"
+* #3 "No recuperado"
+* #4 "Recuperado con secuelas"
+* #0 "Desconocido"
