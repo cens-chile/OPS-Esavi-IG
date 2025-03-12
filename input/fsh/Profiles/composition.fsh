@@ -31,3 +31,9 @@ Description: "Composotion para el Esavi, contiene datos útiles para la notifica
 * author 1..1 
 * author ^short = "Profesional notificador."
 * author only Reference(PractitionerRoleCargoOPSEsavi)
+
+* section 1..1 
+  * title 1..1
+  * title = "QuestionnaireResponse"
+  * entry 1..1 
+  * entry only Reference(QuestionnaireResponseOPSEsavi)

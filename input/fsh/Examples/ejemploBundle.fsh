@@ -28,3 +28,6 @@ Usage: #example
 
 * entry[encounter].fullUrl = "http://acme.com/fhir/Encounter/EjemploEncounter"
 * entry[encounter].resource = EjemploEncounter
+
+* entry[questionnaireResponse].fullUrl = "http://acme.com/fhir/QuestionnaireResponse/EjemploESAVIQuestionnaireResponse"
+* entry[questionnaireResponse].resource = EjemploESAVIQuestionnaireResponse

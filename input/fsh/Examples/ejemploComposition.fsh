@@ -25,3 +25,7 @@ Description: "Composición de ejemplo para notificación de caso ESAVI"
 * date = "2024-12-01T10:00:00Z"
 
 * author = Reference(EjemploPRole)
+
+* section
+  * title = "QuestionnaireResponse"
+  * entry = Reference(EjemploESAVIQuestionnaireResponse)
