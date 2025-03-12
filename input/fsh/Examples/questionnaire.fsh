@@ -162,6 +162,7 @@ Usage: #example
 * item[=].item[+].type = #choice 
 * item[=].item[=].required = true
 * item[=].item[=].linkId = "formaDeVerificacion"
+* item[=].item[=].answerValueSet = "https://paho.org/fhir/ops-esavi/ValueSet/FormaVerificacionVS"
 * item[=].item[=].text = "Mecanismo de validación del proceso de vacunación."
 
 * item[=].item[+].type = #string
@@ -189,12 +190,12 @@ Usage: #example
 * item[=].item[=].linkId = "otroNombre"
 * item[=].item[=].text = "Nombre de reacción no existente en la lista anterior"
 
-* item[=].item[+].type = #string 
+* item[=].item[+].type = #date 
 * item[=].item[=].required = false 
 * item[=].item[=].linkId = "fechaInicio"
 * item[=].item[=].text = "Corresponde a la fecha de inicio de síntomas/signos/hallazgo anormal de laboratorio/enfermedad referido por el paciente o identificado por el médico tratante."
 
-* item[=].item[+].type = #string 
+* item[=].item[+].type = #time 
 * item[=].item[=].required = false 
 * item[=].item[=].linkId = "horaInicio"
 * item[=].item[=].text = "Corresponde a la Hora de inicio de síntomas/signos/hallazgo anormal de laboratorio/enfermedad referido por el paciente o identificado por el médico tratante"
@@ -309,12 +310,12 @@ Usage: #example
 * item[=].item[=].text = "Tipo de investigación requerida"
 
 * item[=].item[+].type = #date
-* item[=].item[=].required = true
+* item[=].item[=].required = false //true if investigacionRequerida = true
 * item[=].item[=].linkId = "fechaPrevistaInicioInvestigacion"
 * item[=].item[=].text = "Fecha prevista para el inicio de la investigación"
 
 * item[=].item[+].type = #date
-* item[=].item[=].required = true
+* item[=].item[=].required = false //true if investigacionRequerida = true
 * item[=].item[=].linkId = "fechaInicioInvestigacion"
 * item[=].item[=].text = "Fecha de inicio de la investigación"
 
@@ -325,7 +326,7 @@ Usage: #example
 * item[=].linkId = "apartadoNivelNacional"
 * item[=].text = "Apartado que debe completar el nivel nacional"
 
-* item[=].item[0].type = #boolean
+* item[=].item[0].type = #date
 * item[=].item[=].required = false
 * item[=].item[=].linkId = "fechaRecepcionNacional"
 * item[=].item[=].text = "Fecha en que el nivel nacional recibió la notificación."
