@@ -43,26 +43,161 @@ Usage: #example
 
 * item[=].item[0].type = #choice 
 * item[=].item[=].required = true
-* item[=].item[=].linkId = "medicamento"
+* item[=].item[=].linkId = "nombreGenericoMedicamento"
 * item[=].item[=].answerValueSet = "https://paho.org/fhir/ops-esavi/ValueSet/CodigoMedicamentoVS" 
-* item[=].item[=].text = "Identifica los nombres de los medicamentos por nombre genérico/nombre comercial/substancia activa administrados de manera concomitante con la vacuna o que sean relevantes para el evento adverso observado."
+* item[=].item[=].text = "Corresponde al nombre común o denominación común internacional oficial recomendada por la OMS de un medicamento usado de manera concomitante con la vacuna o que sea relevante para el evento adverso observado. Debe registrarse según el estándar internacional disponible en el país, preferiblemente la DCI (ó International Nonproprietary Name - INN) de la OMS, o, si no existe, un nombre genérico preferido de acuerdo al catálogo WHODrug.
+En caso de no contar con WHODrug, se recomienda usar un nombre de acuerdo un catálogo nacional estandarizado, una farmacopea oficial aceptada en el país, o en su defecto, conforme a la autorización de comercialización (i.e. registro sanitario)."
 
 * item[=].item[+].type = #choice 
 * item[=].item[=].required = true
-* item[=].item[=].linkId = "formaFarmaceutica"
+* item[=].item[=].linkId = "nombreComercialMedicamento"
+* item[=].item[=].answerValueSet = "https://paho.org/fhir/ops-esavi/ValueSet/CodigoMedicamentoVS" 
+* item[=].item[=].text = "Corresponde al nombre inventado, de fantasía o de marca, según la autorización de la agencia regulatoria del país incorporado en un catálogo estandarizado( ie WHODrug, catálogo nacional conforme a IDMP, etc), del medicamento usado de manera concomitante con la vacuna o que sea relevante para el evento adverso observado.  En caso de no contar con con el nombre estandarizado se debe seleccionar la opción 'Otro' y registrar el nombre en texto libre."
+
+* item[=].item[+].type = #choice 
+* item[=].item[=].required = true
+* item[=].item[=].linkId = "titularComercializacion"
+* item[=].item[=].text = "Corresponde al nombre del laboratorio titular de la autorización de comercialización o registro sanitario (la organización autorizada para comercializar el medicamento en el país) del medicamento utilizado de manera concomitante con la vacuna o que sea relevante para el evento adverso observado, de acuerdo a como se indica en el envase, y conforme al listado utilizado por el país (el más utilizado en farmacovigilancia es WHODrug)."
+
+* item[=].item[+].type = #choice 
+* item[=].item[=].required = true
+* item[=].item[=].linkId = "identificadorMedicamento"
+* item[=].item[=].text = "Corresponde al código de identificación, de acuerdo a un estándar, del medicamento usado de manera concomitante con la vacuna o que sea relevante para el evento adverso observado. Preferiblemente debe registrarse un MPID (nacional o de WHODrug) y PhPID global, si existen. Si no existen, debe registrar el número de registro sanitario o autorización de comercialización. "
+
+* item[=].item[+].type = #choice 
+* item[=].item[=].required = true
+* item[=].item[=].linkId = "formaFarmaceuticaMedicamento"
 * item[=].item[=].answerValueSet = "https://paho.org/fhir/ops-esavi/ValueSet/FormaFarmaceuticaVS" 
 * item[=].item[=].text = "Corresponde a la presentación del medicamento que la persona estaba tomando al momento de la vacunación."
 
-* item[=].item[+].type = #string // revisar !!
+* item[=].item[+].type = #integer 
 * item[=].item[=].required = true
-* item[=].item[=].linkId = "dosisMedicamento"
-* item[=].item[=].text = "Corresponde a identificar la cantidad y unidad de medida del medicamento/nombre genérico administrado además de la frecuencia de uso del medicamento según el número de veces al día que se consume."
+* item[=].item[=].linkId = "cantidadPotenciaMedicamento"
+* item[=].item[=].text = "Se refiere a la cantidad del ingrediente activo del medicamento administrado junto con la vacuna o relacionado con un evento adverso. Esta potencia puede expresarse de dos formas:
+Presentación: cantidad por unidad del producto, por ejemplo, 10 mg por tableta.
+Concentración: cantidad por unidad de volumen o peso, como 4 mg/0,8 ml, según lo indicado en el envase."
+
+* item[=].item[+].type = #choice
+* item[=].item[=].required = true
+* item[=].item[=].linkId = "unidadPotenciaMedicamento"
+* item[=].item[=].text = "Se refiere a la cantidad del ingrediente activo del medicamento administrado junto con la vacuna o relacionado con un evento adverso. Esta potencia puede expresarse de dos formas:
+Presentación: cantidad por unidad del producto, por ejemplo, 10 mg por tableta.
+Concentración: cantidad por unidad de volumen o peso, como 4 mg/0,8 ml, según lo indicado en el envase."
+
+* item[=].item[+].type = #integer
+* item[=].item[=].required = true
+* item[=].item[=].linkId = "cantidadDosisMedicamento"
+* item[=].item[=].text = "Corresponde a identificar la cantidad  administrada del medicamento utilizado de manera concomitante con la vacuna o que sean relevantes para el evento adverso observado."
+
+* item[=].item[+].type = #choice
+* item[=].item[=].required = true
+* item[=].item[=].linkId = "unidadDosisMedicamento"
+* item[=].item[=].text = "Corresponde a la unidad de la dosis administrada del medicamento utilizado de manera concomitante con la vacuna o que sean relevantes para el evento adverso observado, de acuerdo al estándar internacional (preferiblemente UCUM)."
+
+* item[=].item[+].type = #choice
+* item[=].item[=].required = true
+* item[=].item[=].linkId = "intervaloNroDosisMedicamento"
+* item[=].item[=].text = "Corresponde al  número de intervalo de tiempo de administración del medicamento utilizado de manera concomitante con la vacuna o que sean relevantes para el evento adverso."
+
+* item[=].item[+].type = #choice
+* item[=].item[=].required = true
+* item[=].item[=].linkId = "intervaloTiempoDosisMedicamento"
+* item[=].item[=].text = "Corresponde a la unidad del intervalo de tiempo(horas, semanas,dosis única) entre cada administración del medicamento utilizado de manera concomitante con la vacuna o que sea relevantes para el evento adverso observado, de acuerdo al estándar internacional (preferiblemente UCUM)."
 
 * item[=].item[+].type = #choice 
 * item[=].item[=].required = true
 * item[=].item[=].linkId = "viaMedicamento"
 * item[=].item[=].answerValueSet = "https://paho.org/fhir/ops-esavi/ValueSet/ViaAdminMedicamentoVS" 
 * item[=].item[=].text = "Corresponde a identificar la vía de administración de los medicamentos que se administraron."
+
+* item[=].item[+].type = #date
+* item[=].item[=].required = true
+* item[=].item[=].linkId = "fechaMedicamento"
+* item[=].item[=].text = "Corresponde a la fecha de inicio de la administración del medicamento."
+
+
+/////////////////////  Grupo embarazo  //////////////////////////////////
+
+* item[+].type = #group
+* item[=].required = true
+* item[=].repeats = true 
+* item[=].linkId = "embarazo"
+* item[=].text = "Embarazo (persona vacunada es una mujer entre 15 y 49 años o si existe sospecha de embarazo)"
+
+* item[=].item[0].type = #boolean
+* item[=].item[=].required = true
+* item[=].item[=].linkId = "embarazoVacunacion"
+* item[=].item[=].text = "Si la persona estaba embarazada al momento de recibir la vacuna."
+
+* item[=].item[+].type = #boolean
+* item[=].item[=].required = true
+* item[=].item[=].linkId = "embarazoESAVI"
+* item[=].item[=].text = "Si la persona estaba embarazada al momento del ESAVI."
+
+* item[=].item[+].type = #date
+* item[=].item[=].required = false
+* item[=].item[=].linkId = "fechaUltimaMenstruacion"
+* item[=].item[=].text = "Registra la fecha que indica la mujer o su historia clínica como el primer día de la última menstruación del embarazo al momento de la vacunación o del ESAVI según corresponda."
+
+* item[=].item[+].type = #integer
+* item[=].item[=].required = false
+* item[=].item[=].linkId = "semanasGestacion"
+/* * item[=].enableWhen[=].question = "embarazoVacunacion"
+* item[=].enableWhen[=].operator = #=
+* item[=].enableWhen[=].answerBoolean = true */
+* item[=].item[=].text = "Semana de gestación en el momento del ESAVI"
+
+* item[=].item[+].type = #date
+* item[=].item[=].required = false
+* item[=].item[=].linkId = "fechaProbableParto"
+* item[=].item[=].text = "Fecha probable de parto calculada a partir de la fecha de la última menstruación o ecografia de primer trimestre. En muchas ocasiones las mujeres embarazadas más que la FUM."
+
+* item[=].item[+].type = #string
+* item[=].item[=].required = false
+* item[=].item[=].linkId = "seguimientoEmbarazo"
+* item[=].item[=].text = "Describe si fue realizado seguimiento de la gestante vacunada en  una institución de salud."
+
+* item[=].item[+].type = #string
+* item[=].item[=].required = false
+* item[=].item[=].linkId = "complicacionesEmbarazo"
+* item[=].item[=].text = "Presencia de complicaciones durante el embarazo, parto, puerperio, complicaciones neonatales o anomalias congénitas depués de la vacunación."
+
+* item[=].item[+].type = #choice
+* item[=].item[=].required = false
+* item[=].item[=].repeats = true 
+* item[=].item[=].linkId = "diagnosticoComplicacionFetal"
+* item[=].item[=].text = "Registro del diagnóstico de la complicación fetal o neonatal o anomalía congénita identificada posterior a la vacunación de la gestante de acuerdo al estándar."
+
+* item[=].item[+].type = #choice
+* item[=].item[=].required = false
+* item[=].item[=].repeats = true 
+* item[=].item[=].linkId = "codigoDiagnosticoComplicacionFetal"
+* item[=].item[=].text = "Corresponde al código del diagnóstico de la complicación fetal o neonatal o anomalía congénita identificada posterior a la vacunación de la gestante según el estándar utilizado por el país ( los más utilizados en farmacovigilancia son MedDRA/CIE 11/SNOMED). Usualmente se utiliza el nivel  más bajo de la jerarquía del estándar. Por ejemplo en el caso del estándar MedDRA se utiliza el  código LLT."
+
+
+* item[=].item[+].type = #choice
+* item[=].item[=].required = false
+* item[=].item[=].repeats = true 
+* item[=].item[=].linkId = "diagnosticoComplicacionEmbarazo"
+* item[=].item[=].text = "Registro del diagnóstico de la complicación durante el embarazo de acuerdo al estándar ( los más utilizados en farmacovigilancia son MedDRA/CIE 11/SNOMED). Usualmente se utiliza el nivel más bajo de la jerarquía del estándar. Por ejemplo en el caso del estándar MedDRA se utiliza el código LLT."
+
+* item[=].item[+].type = #choice
+* item[=].item[=].required = false
+* item[=].item[=].repeats = true 
+* item[=].item[=].linkId = "codigoComplicacionEmbarazo"
+* item[=].item[=].text = "Código del registro del diagnóstico de la complicación durante el embarazo, parto o puerperio de acuerdo al estándar ( los más utilizados en farmacovigilancia son MedDRA/CIE 11/SNOMED). Usualmente se utiliza el nivel  más bajo de la jerarquía del estándar. Por ejemplo en el caso del estándar MedDRA se utiliza el  código LLT."
+
+* item[=].item[+].type = #choice
+* item[=].item[=].required = false
+* item[=].item[=].repeats = true 
+* item[=].item[=].linkId = "diagnosticoComplicacionParto"
+* item[=].item[=].text = "Registro del diagnóstico de la complicación durante el parto de acuerdo al estándar ( los más utilizados en farmacovigilancia son MedDRA/CIE 11/SNOMED). Usualmente se utiliza el nivel más bajo de la jerarquía del estándar. Por ejemplo en el caso del estándar MedDRA se utiliza el código LLT."
+
+* item[=].item[+].type = #choice
+* item[=].item[=].required = false
+* item[=].item[=].repeats = true 
+* item[=].item[=].linkId = "codigoComplicacionParto"
+* item[=].item[=].text = "Código del registro del diagnóstico de la complicación durante el parto o puerperio de acuerdo al estándar ( los más utilizados en farmacovigilancia son MedDRA/CIE 11/SNOMED). Usualmente se utiliza el nivel  más bajo de la jerarquía del estándar. Por ejemplo en el caso del estándar MedDRA se utiliza el  código LLT."
 
 /////////////////////  Grupo vacunas  //////////////////////////////////
 
@@ -72,31 +207,62 @@ Usage: #example
 * item[=].linkId = "vacunas"
 * item[=].text = "Vacunas"
 
-* item[=].item[0].type = #string
+* item[=].item[0].type = #boolean
 * item[=].item[=].required = true
-* item[=].item[=].linkId = "nombre"
-* item[=].item[=].text = "Identifica los nombres de la s vacunas administradas  por nombre genérico/nombre comercial/substancia activa administrados de manera concomitante con la vacuna o que sean relevantes para el evento adverso observado."
+* item[=].item[=].linkId = "vacunaSospechosa"
+* item[=].item[=].text = "Es la vacuna sospechosa de causar el ESAVI. En caso de que la persona haya recibido más de una vacuna, registre la que se sospecha como causante del evento adverso."
 
-* item[=].item[+].type = #string
+* item[=].item[+].type = #choice
 * item[=].item[=].required = true
-* item[=].item[=].linkId = "nombreComercial"
-* item[=].item[=].text = "Corresponde al nombre comercial de la vacuna administrada."
+* item[=].item[=].linkId = "nombreComercialVacuna"
+* item[=].item[=].text = "Corresponde al nombre inventado, de fantasía o de marca, según la autorización de la agencia regulatoria del país, incorporado en un catálogo estandarizado (ie WhoDrug, catálogo nacional conforme a IDMP, etc) de la vacuna administrada inmediatamente antes del ESAVI. En caso de no contar con el nombre estandarizado se debe seleccionar la opción 'Otro' y registrar el nombre en texto libre."
 
-* item[=].item[+].type = #string
+* item[=].item[+].type = #choice
 * item[=].item[=].required = true
-* item[=].item[=].linkId = "nombreNoClasificado"
-* item[=].item[=].text = "Corresponde al nombre de las vacunas administradas inmediatamente antes del ESAVI y en el caso de COVID19 las vacunas aplicadas como parte del esquema completo."
+* item[=].item[=].linkId = "nombreGenericoVacuna"
+* item[=].item[=].text = "Corresponde a la denominación común oficial, recomendada por la OMS, de la vacuna administrada inmediatamente antes del ESAVI. Debe registrarse según el estándar internacional disponible en el país, preferiblemente la DCI (ó International Nonproprietary Name - INN) de la OMS.  En caso de no existir, se sugiere el uso de un nombre genérico preferido de acuerdo al catálogo WHODrug."
+
+* item[=].item[+].type = #choice
+* item[=].item[=].required = true
+* item[=].item[=].linkId = "nombreDescriptivoVacuna"
+* item[=].item[=].text = "Corresponde a la denominación común oficial, recomendada por la OMS, que describe  el tipo específico de vacuna administrada inmediatamente antes del ESAVI( puede contener las enfermedades con las que protege, valencia, tipo de plataforma, etc). Debe registrarse según el estándar internacional disponible en el país, preferiblemente un nombre internacional (propio) recomendado por el ECBS de la OMS, que describe un tipo específico de vacuna, y no representa su marca o nombre comercial."
+
+* item[=].item[+].type = #choice
+* item[=].item[=].required = true
+* item[=].item[=].linkId = "identificadorVacuna"
+* item[=].item[=].text = "Corresponde al código de identificación, de acuerdo a un estándar, de la vacuna administrada inmediatamente antes del ESAVI. Preferiblemente debe registrarse un MPID (nacional o de WHODrug) y PhPID global, si existen. Si no existen, debe registrar el número de registro sanitario, autorización de comercialización o su equivalente."
+
+* item[=].item[+].type = #integer 
+* item[=].item[=].required = true
+* item[=].item[=].linkId = "cantidadPotenciaVacuna"
+* item[=].item[=].text = "Corresponde a la cantidad de la composición cuantitativa del ingrediente activo de la vacuna administrada antes dele evento observado"
+
+* item[=].item[+].type = #choice
+* item[=].item[=].required = true
+* item[=].item[=].linkId = "unidadPotenciaVacuna"
+* item[=].item[=].text = "Corresponde a la unidad de la composición cuantitativa del ingrediente activo de la vacuna administrada antes dele evento observado. Se recomienda el catálogo UCUM"
+
+* item[=].item[+].type = #choice 
+* item[=].item[=].required = true
+* item[=].item[=].linkId = "formaFarmaceuticaVacuna"
+* item[=].item[=].answerValueSet = "https://paho.org/fhir/ops-esavi/ValueSet/FormaFarmaceuticaVS" 
+* item[=].item[=].text = "Corresponde a la descripción de la presentación o manifestación física de la vacuna administrada antes del ESAVI. Debe describirse la forma farmacéutica de dosificación de la vacuna tal como ha sido fabricado, antes de ser transformado en el producto farmacéutico a administrar, de acuerdo al estandar internacional vigente, preferiblemente, usando términos estándar EDQM."
+
+* item[=].item[+].type = #choice
+* item[=].item[=].required = false
+* item[=].item[=].linkId = "nombreTitularComercializacionVacuna"
+* item[=].item[=].text = "Corresponde al nombre del laboratorio titular del registro sanitario o autorización de comercialización (la organización autorizada para comercializar la vacuna en el país)  de la vacuna administrada inmediatamente antes del ESAVI. El nombre del titular se recomienda registrar de acuerdo al envase, y conforme al listado utilizado por el país (el más utilizado en farmacovigilancia es WHODrug). "
 
 * item[=].item[+].type = #string
 * item[=].item[=].required = true
 * item[=].item[=].linkId = "nombreFabricante"
 * item[=].item[=].text = "Corresponde al nombre del fabricante de las vacunas administradas inmediatamente antes del ESAVI y en el caso de COVID19 las vacunas aplicadas como parte del esquema completo."
 
-* item[=].item[+].type = #choice 
+/* * item[=].item[+].type = #choice 
 * item[=].item[=].required = false
 * item[=].item[=].linkId = "codigoVacuna"
 * item[=].item[=].answerValueSet = "https://paho.org/fhir/ops-esavi/ValueSet/CodigoWhoVacunaVS"
-* item[=].item[=].text = "Corresponde al codigo de la vacuna vacunas administradas inmediatamente antes del ESAVI."
+* item[=].item[=].text = "Corresponde al codigo de la vacuna vacunas administradas inmediatamente antes del ESAVI." */
 
 * item[=].item[+].type = #date
 * item[=].item[=].required = true
@@ -110,8 +276,24 @@ Usage: #example
 
 * item[=].item[+].type = #integer 
 * item[=].item[=].required = true
-* item[=].item[=].linkId = "dosis"
+* item[=].item[=].linkId = "dosisVacuna"
 * item[=].item[=].text = "Corresponde al orden de la dosis de la vacuna que se consigna para el ESAVI."
+
+* item[=].item[+].type = #integer 
+* item[=].item[=].required = true
+* item[=].item[=].linkId = "cantidadDosisVacuna"
+* item[=].item[=].text = "Corresponde a identificar la cantidad  administrada de la vacuna administrada inmediatamente antes del ESAVI."
+
+* item[=].item[+].type = #choice 
+* item[=].item[=].required = true
+* item[=].item[=].linkId = "unidadDosisVacuna"
+* item[=].item[=].text = "Corresponde a identificar la unidad administrada de la vacuna administrada inmediatamente antes del ESAVI. Se recomienda el catáligo UCUM."
+
+* item[=].item[+].type = #choice 
+* item[=].item[=].required = true
+* item[=].item[=].linkId = "viaVacuna"
+* item[=].item[=].answerValueSet = "https://paho.org/fhir/ops-esavi/ValueSet/ViaAdminMedicamentoVS" 
+* item[=].item[=].text = "Corresponde a la vía por la que la vacuna es administrada(ingresa al cuerpo). Debe registrarse de acuerdo al estándar internacional (preferiblemente términos estándar EDQM)."
 
 * item[=].item[+].type = #string
 * item[=].item[=].required = true
@@ -123,10 +305,15 @@ Usage: #example
 * item[=].item[=].linkId = "fechaVencimientoVacuna"
 * item[=].item[=].text = "Corresponde a la fecha de vencimiento de la vacuna que se consigna para el ESAVI, indicada por el fabricante."
 
-* item[=].item[+].type = #choice // crear cs/vs 
+* item[=].item[+].type = #choice 
 * item[=].item[=].required = false
 * item[=].item[=].linkId = "nombreDiluyenteVacuna"
 * item[=].item[=].text = "Corresponde al nombre del diluyente de la vacuna que se consigna para el ESAVI."
+
+* item[=].item[+].type = #choice 
+* item[=].item[=].required = false
+* item[=].item[=].linkId = "identificadorDiluyenteVacuna"
+* item[=].item[=].text = "Corresponde al código de identificación, de acuerdo a un estándar, del diluyente usado para reconstituir la vacuna administrada inmediatamente antes del ESAVI. Preferiblemente debe registrarse un MPID (nacional o de WHODrug) si existen. Si no existen, debe registrar el número de registro sanitario, autorización de comercialización o su equivalente."
 
 * item[=].item[+].type = #string
 * item[=].item[=].required = false
@@ -143,12 +330,13 @@ Usage: #example
 * item[=].item[=].linkId = "fechaReconstitucion"
 * item[=].item[=].text = "Fecha en la que se combinó el diluyente y la vacuna para ser administrada."
 
-* item[=].item[+].type = #string
+* item[=].item[+].type = #time
 * item[=].item[=].required = false
 * item[=].item[=].linkId = "horaReconstitucion"
-* item[=].item[=].text = "Hora en la que se combinó el diluyente y la vacuna para ser administrada."
+* item[=].item[=].text = "Hora (en formato de 24 horas) en la que se combinó el diluyente y la vacuna para ser administrada."
 
-* item[=].item[+].type = #boolean
+
+/* * item[=].item[+].type = #boolean
 * item[=].item[=].required = true
 * item[=].item[=].linkId = "existeOtraVacunacion"
 * item[=].item[=].text = "Administración de otra vacuna, distinta a la registrada anteriormente, en los 30 días previos al inicio de los síntomas del ESAVI que se está notificando."
@@ -157,7 +345,7 @@ Usage: #example
 * item[=].item[=].required = false
 * item[=].item[=].repeats = true
 * item[=].item[=].linkId = "otraVacunaNombre"
-* item[=].item[=].text = "Descripción de otra vacuna administrada en los 30 días anteriores."
+* item[=].item[=].text = "Descripción de otra vacuna administrada en los 30 días anteriores." */
 
 * item[=].item[+].type = #choice 
 * item[=].item[=].required = true
@@ -200,7 +388,13 @@ Usage: #example
 * item[=].item[=].linkId = "horaInicio"
 * item[=].item[=].text = "Corresponde a la Hora de inicio de síntomas/signos/hallazgo anormal de laboratorio/enfermedad referido por el paciente o identificado por el médico tratante"
 
-* item[=].item[+].type = #choice
+
+* item[=].item[+].type = #choice 
+* item[=].item[=].required = false 
+* item[=].item[=].linkId = "codigoTerminoESAVI"
+* item[=].item[=].text = "Código estandarizado para la codificación del diagnóstico de la situación de salud notificada (el más utilizado en farmacovigilancia es MedDRA)."
+
+/* * item[=].item[+].type = #choice
 * item[=].item[=].required = false 
 * item[=].item[=].linkId = "codigoMedDRA"
 * item[=].item[=].answerValueSet = "https://paho.org/fhir/ops-esavi/ValueSet/CodigoMeDRAAntecedenteVS" 
@@ -209,12 +403,17 @@ Usage: #example
 * item[=].item[+].type = #string 
 * item[=].item[=].required = false 
 * item[=].item[=].linkId = "codigoCIE"
-* item[=].item[=].text = "Código estandarizado para la codificación del diagnóstico. Se puede usar."
+* item[=].item[=].text = "Código estandarizado para la codificación del diagnóstico. Se puede usar." */
 
 * item[=].item[+].type = #string 
 * item[=].item[=].required = false 
 * item[=].item[=].linkId = "descripcionSintomas"
 * item[=].item[=].text = "Síntomas tal como los describe el paciente o la paciente, y los signos clínicos del evento, e incluya también los resultados de las pruebas de laboratorio y de imagen realizadas que sean relevantes)."
+
+* item[=].item[+].type = #string 
+* item[=].item[=].required = false 
+* item[=].item[=].linkId = "informacionAdicional"
+* item[=].item[=].text = "Comentarios o información adicional que considere importante y que no haya registrado en los apartados anteriores"
 
 * item[=].item[+].type = #boolean 
 * item[=].item[=].required = false 
@@ -266,31 +465,33 @@ Usage: #example
 * item[=].item[=].linkId = "especificacionOtroEventoClinico"
 * item[=].item[=].text = "Especificación del 'otro evento clínico importante'."
 
-* item[=].item[+].type = #choice // choice (ver excel)
+* item[=].item[+].type = #choice 
 * item[=].item[=].required = false 
 * item[=].item[=].linkId = "condicionResultante"
 * item[=].item[=].answerValueSet = "https://paho.org/fhir/ops-esavi/ValueSet/ClasificacionDesenlaceVS"
 * item[=].item[=].text = "Categorías de desenlace del ESAVI."
 
-* item[=].item[+].type = #dateTime 
-* item[=].item[=].required = false 
-* item[=].item[=].linkId = "fechadeMuerte"
-* item[=].item[=].text = "Corresponde a la fecha de muerte."
+/////////////////////  Grupo datosMuerte  //////////////////////////////////
 
-* item[=].item[+].type = #boolean 
-* item[=].item[=].required = false 
-* item[=].item[=].linkId = "autopsiaSolicitada"
-* item[=].item[=].text = "Indica si se solicitó autopsia."
+* item[+].type = #group
+* item[=].required = false
+* item[=].linkId = "datosMuerte"
+* item[=].text = "Datos útiles en caso de muerte"
 
-* item[=].item[+].type = #boolean // choice (ver excel)
+* item[=].item[0].type = #date
+* item[=].item[=].required = false
+* item[=].item[=].linkId = "fechaMuerte"
+* item[=].item[=].text = "Corresponde a la fecha de muerte"
+
+* item[=].item[+].type = #boolean
 * item[=].item[=].required = false 
 * item[=].item[=].linkId = "autopsiaRealizada"
-* item[=].item[=].text = "Indica si al caso se le realizó autopsia."
+* item[=].item[=].text = " Indica si se ha solicitado la realización de una autopsia en el contexto de un fallecimiento, con el propósito de determinar la causa de muerte y otros hallazgos relevantes"
 
-* item[=].item[+].type = #attachment 
+* item[=].item[+].type = #string
 * item[=].item[=].required = false 
 * item[=].item[=].linkId = "informeAutopsia"
-* item[=].item[=].text = "Adjuntar informe."
+* item[=].item[=].text = "Informe de autopsia."
 
 /////////////////////  Grupo datosDeInvestigación  //////////////////////////////////
 
