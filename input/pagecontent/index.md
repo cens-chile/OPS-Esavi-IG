@@ -50,6 +50,11 @@ La Guía de Implementación basada en FHIR es una herramienta clave para garanti
 
 El desarrollo de estas herramientas se realizará en colaboración con expertos en informática en salud, vigilancia de vacunas y terminologías clínicas, asegurando su relevancia y aplicabilidad en los países de la región de las Américas.
 
+### Buscar ESAVI
+
+En el momento que un usuario (Notificador o Punto Focal Institucional de ESAVI) requiera registrar o editar un caso de ESAVI, se ejecutaría previamente la operación de búsqueda de ESAVI, ya sea para asegurar que no exista previamente un registro de ESAVI para el mismo evento de vacunación, o para encontrar el ESAVI que se requiere editar o incorporar más información.
+
+Esta operación trae implícita la operación de búsqueda de pacientes.
 
 <!-- ### Cómo leer esta guía
 
