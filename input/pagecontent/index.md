@@ -13,6 +13,35 @@ La pandemia de COVID-19 exacerbó los retos relacionados con la vigilancia de lo
 
 En este contexto, la vigilancia efectiva de los ESAVI es crucial para garantizar la seguridad de los productos vacunales y fortalecer la confianza del público. Esto requiere sistemas de información robustos, estandarizados e interoperables que permitan la detección temprana, notificación y análisis de eventos adversos.
 
+### Contexto de la SMART Guideline de Vigilancia Nacional de ESAVI.
+
+La SMART Guideline de Vigilancia Nacional de ESAVI se enmarca dentro del  flujo de información desde que se notifica por parte del afectado(paciente)  respecto de su estado de salud post vacunación a un Centro de Salud  hasta la etapa en la que se comparte esta información hacia el nivel regional( Organización Panamericana de la Salud).
+
+En ese contexto, se debe entender que  los datos debe ser correctamente interpretados por aquellos que los accesen, haciéndose necesario contar con terminología que ayude a estandarizar el significado de la información, así como también es necesario contar con conexiones que permitan acceder a la información almacenada en otros sistemas de salud con los que cuente el país.
+
+La presente guía de implementación sugiere la comunicación estandarizada para la notificación de un nuevo ESAVI desde el punto de atención del paciente hacia un sistema nacional de vigilancia ESAVI que permita soportar el tratamiento de la información relacionada con el ESAVI desde su recepción hasta la determinación de la relación entre los síntomas y la vacunación.
+
+Con ese propósito, se sugiere considerar la AUTOMATIZACIÓN de la importación desde otros sistemas digitales, de información disponible y confiable útil para describir el ESAVI y su entorno.
+
+En ese contexto, es factible encontrar implementaciones de sistemas especializados en cada dominio de la salud digital, entre ellos:
+
+* **Ficha Electrónica Interoperable**: No necesariamente corresponde a un sistema como tal, sino más bien a una especificación de cómo compartir los datos de salud (historial clínico, medicamentos, diagnósticos, etc.), que puede implementarse como un sistema centralizado, o indicando cómo cada centro de salud puede o debe compartir la información de sus pacientes, regulando tanto el acceso como la seguridad y la privacidad de la información. Este concepto involucra distintos tipos de sistemas como EHR, EMR, entre otros.
+* **Receta Electrónica Interoperable**: Corresponde a sistemas digitales que permiten compartir las indicaciones de medicamentos de manera fiable y comprobable desde el personal de salud que lo emite hacia los pacientes, farmacias, otro personal de salud, complementando la historia clínica del paciente.
+* **Sistemas de Vacunación**: Corresponde a sistemas que permiten registrar las vacunaciones aplicadas a cada paciente, complementando el historial del paciente, y generando información útil para el nivel central respecto de la población vacunada.
+* __Sistemas de identificación de pacientes__: No necesariamente cerrados a pacientes sino más bien a la identificación de personas, en general los países cuentan con un Registro Civil que abarca la identificación de gran parte de la población de un país. No obstante, en caso que el país no cuente con sistemas digitales que apoyen el servicio del Registro Civil, sí podría contar con sistemas de identificación específicos de pacientes en cada centro de salud, lo que también podría ser útil para aportar automatizadamente información del paciente a los sistemas de vigilancia nacional de ESAVI.
+
+La situación ideal es donde cada sistema cuente con mecanismos para compartir la información(por ejemplo, interfaces FHIR con sus respectivas Guías de Implementación asociadas). De esta manera, el sistema de vigilancia nacional de ESAVI podría automatizar la ingesta de los datos que requiera al momento de registrarse un nuevo ESAVI, haciendo la información fiable y congruente entre cada uno de los sistemas.
+
+
+<div align="center" ><img src="ContextoIGVigNacESAVIv2.png" alt="Contexto de la Vigilancia Nacional de ESAVI"></div>
+
+En el contexto ideal, también sería óptimo la utilización de terminologías nacionales entre los sistemas, que permitan identificar de manera inequívoca los datos entre cada uno de los sistemas, contando con catálogos, descripciones, sinonímia, jerarquías, etc, en la definición de Vacunas, Enfermedades, Medicinas, Síntomas, además de catálogos de los lugares de los países, vías de administración, etc.
+
+
+De manera complementaria, una vez que se cuenta con registros de ESAVI a nivel nacional, se recomienda la utilización de la Guía de Implementación FHIR de ESAVI para compartir los datos relevantes (como mínimo los ESAVI Graves) a la Organización Panamericana de la Salud.
+
+<div align="center" ><img src="ContextoIGVigNacESAVI-toPAHO.png" alt="Notificación a OPS"></div>
+
 ### Solución Propuesta
 
 Para abordar estos desafíos, el proyecto propone el desarrollo de un Kit de Adaptación Digital (DAK) de Nivel 2 y una Guía de Implementación FHIR (Nivel 3\) diseñados específicamente para la vigilancia de los ESAVI a nivel nacional. Estas herramientas están alineadas con las Directrices SMART de la Organización Mundial de la Salud (OMS), que proporcionan un enfoque estructurado para la digitalización de las recomendaciones clínicas y de salud pública.
@@ -50,12 +79,6 @@ La Guía de Implementación basada en FHIR es una herramienta clave para garanti
 
 El desarrollo de estas herramientas se realizará en colaboración con expertos en informática en salud, vigilancia de vacunas y terminologías clínicas, asegurando su relevancia y aplicabilidad en los países de la región de las Américas.
 
-### Buscar ESAVI
-
-En el momento que un usuario (Notificador o Punto Focal Institucional de ESAVI) requiera registrar o editar un caso de ESAVI, se ejecutaría previamente la operación de búsqueda de ESAVI, ya sea para asegurar que no exista previamente un registro de ESAVI para el mismo evento de vacunación, o para encontrar el ESAVI que se requiere editar o incorporar más información.
-
-Esta operación trae implícita la operación de búsqueda de pacientes.
-
 <!-- ### Cómo leer esta guía
 
 Esta guía está dividida en varias secciones que se muestran en la barra de menú ubicada en la parte superior de la página
@@ -77,3 +100,5 @@ Uso: Explica las interpretaciones e intenciones de la semántica de los recursos
 Seguridad: Explica los formatos de seguridad para la conexión con el Sistema Regional.
 
 Descargas: Agrupa las descargas disponibles como perfiles, paquete de validación, ejemplos, etc -->
+
+ 
