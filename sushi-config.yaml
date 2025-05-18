@@ -47,6 +47,12 @@ pages:
     title: "Objetivos del Proyecto y de la Guía de Implementación"
   artifacts.html:
     title: "Artefactos"
+  referencias.md:
+    title: "Referencias"
+  seguridad.md:
+    title: "Seguridad"
+  transacciones.md:
+    title: "Transacciones"
 #     title: Example Home
 
 # The parameters property represents IG.definition.parameter. Rather
@@ -72,10 +78,14 @@ pages:
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
   Inicio: index.html
-  Contexto: 
-    "Casos de uso": casos_de_uso.html
-    "Objetivos": objetivos.html
+  Objetivos: objetivos.html
+  Casos de uso: casos_de_uso.html
   Artefactos: artifacts.html
+  Transacciones: transacciones.html
+  Seguridad: seguridad.html
+  Referencias: referencias.html
+
+  
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
 # │  Uncomment the properties below to configure additional properties on the ImplementationGuide  │
