@@ -22,7 +22,7 @@ En el contexto de la Vigilancia Nacional de ESAVI, existen varias Guías de Impl
 
 [`CORE US`](https://build.fhir.org/ig/HL7/US-Core/)
 
-[`FHIR para ESAVI`](https://build.fhir.org/ig/cens-chile/OPS-Esavi-IG/)
+[`FHIR para ESAVI`](https://panamericanhealthorganization.github.io/ESAVI-IG-FHIR/)
 
 
 ## A otros sitios web con información útil.
